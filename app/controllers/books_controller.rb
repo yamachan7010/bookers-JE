@@ -10,6 +10,10 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
+    @boards = Book.order(created_at: :desc).limit(4)
+    if params[:tag_name]
+      @books = Book.tagged_with("#{params[:tag_name]}").page(params[:page]).per(5)
+    end
   end
 
   def create

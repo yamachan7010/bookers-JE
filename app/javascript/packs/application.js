@@ -10,9 +10,10 @@ import "channels"
 import "jquery"
 import "popper.js"
 import "bootstrap"
-
-import "../stylesheets/application" 
+import '@fortawesome/fontawesome-free/js/all';
+import "../stylesheets/application"
+require("./slick")
 
 Rails.start()
-Turbolinks.start()
+// Turbolinks.start()
 ActiveStorage.start()
